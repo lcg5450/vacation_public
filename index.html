@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="하남에서 출발해 부산과 여수를 여행하는 4인 가족의 2026년 여름 여행 계획서">
+  <title>2026 여름 가족여행 계획서</title>
+  <style>
+    :root {
+      --navy: #12304a;
+      --blue: #1676a3;
+      --sky: #eaf6fb;
+      --sand: #f7f0e5;
+      --coral: #e56a54;
+      --ink: #20303b;
+      --muted: #677681;
+      --line: #d9e4e9;
+      --paper: #ffffff;
+      --page: #f1f5f6;
+      --shadow: 0 14px 40px rgba(18, 48, 74, .09);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--page);
+      font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+      line-height: 1.65;
+      word-break: keep-all;
+    }
+    a { color: var(--blue); text-underline-offset: 3px; }
+    a:hover { color: var(--coral); }
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 32px auto 72px;
+      background: var(--paper);
+      border: 1px solid rgba(18, 48, 74, .06);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .hero {
+      position: relative;
+      padding: 64px clamp(24px, 6vw, 72px) 52px;
+      color: white;
+      background:
+        radial-gradient(circle at 88% 20%, rgba(255,255,255,.18) 0 10%, transparent 10.5%),
+        linear-gradient(135deg, #12304a 0%, #126b8d 64%, #22a3bc 100%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -60px;
+      bottom: -75px;
+      width: 310px;
+      height: 150px;
+      border-radius: 50%;
+      border: 24px solid rgba(255,255,255,.12);
+      transform: rotate(-8deg);
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      opacity: .8;
+    }
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(2.15rem, 5vw, 4.4rem);
+      line-height: 1.08;
+      letter-spacing: -.055em;
+    }
+    .hero-copy {
+      max-width: 680px;
+      margin: 18px 0 0;
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      color: rgba(255,255,255,.88);
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 28px;
+    }
+    .chip {
+      padding: 7px 12px;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 999px;
+      background: rgba(255,255,255,.1);
+      font-size: .88rem;
+      font-weight: 700;
+    }
+    .content { padding: 34px clamp(20px, 5vw, 64px) 64px; }
+    nav {
+      position: sticky;
+      top: 10px;
+      z-index: 5;
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      margin: 0 0 34px;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(10px);
+    }
+    nav a {
+      flex: 0 0 auto;
+      padding: 8px 12px;
+      border-radius: 9px;
+      color: var(--navy);
+      font-size: .88rem;
+      font-weight: 750;
+      text-decoration: none;
+    }
+    nav a:hover { background: var(--sky); color: var(--blue); }
+    section { scroll-margin-top: 92px; margin-top: 48px; }
+    section:first-of-type { margin-top: 0; }
+    h2 {
+      margin: 0 0 18px;
+      color: var(--navy);
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      line-height: 1.25;
+      letter-spacing: -.035em;
+    }
+    h3 { margin: 0; color: var(--navy); font-size: 1.12rem; }
+    .section-lead { margin: -8px 0 22px; color: var(--muted); }
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0;
+    }
+    .fact {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: #fbfdfe;
+    }
+    .fact dt { margin-bottom: 3px; color: var(--muted); font-size: .76rem; font-weight: 800; }
+    .fact dd { margin: 0; color: var(--navy); font-weight: 800; line-height: 1.45; }
+    .callout {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-left: 4px solid var(--coral);
+      border-radius: 4px 14px 14px 4px;
+      background: var(--sand);
+    }
+    .callout strong { color: var(--navy); }
+    .timeline { position: relative; margin-top: 10px; padding-left: 28px; }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 7px;
+      width: 2px;
+      background: linear-gradient(var(--blue), #81cbdc);
+    }
+    .step { position: relative; padding: 0 0 22px 10px; }
+    .step:last-child { padding-bottom: 0; }
+    .step::before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: -27px;
+      width: 12px;
+      height: 12px;
+      border: 3px solid white;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 2px var(--blue);
+    }
+    .step time { color: var(--blue); font-size: .8rem; font-weight: 850; }
+    .step p { margin: 3px 0 0; }
+    .recommendation {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .recommendation > div {
+      padding: 22px;
+      border-radius: 18px;
+    }
+    .primary { color: white; background: var(--navy); }
+    .primary h3 { color: white; }
+    .primary p { margin-bottom: 0; color: rgba(255,255,255,.84); }
+    .backup { border: 1px solid #b7dce8; background: var(--sky); }
+    .backup p { margin-bottom: 0; color: #395765; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+    }
+    .rank {
+      display: inline-flex;
+      align-self: flex-start;
+      margin-bottom: 12px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: var(--blue);
+      background: var(--sky);
+      font-size: .75rem;
+      font-weight: 850;
+    }
+    .card p { margin: 8px 0 12px; color: #40525d; }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 0 0 12px;
+      padding: 0;
+      list-style: none;
+    }
+    .meta li { padding: 4px 8px; border-radius: 7px; background: #f0f4f6; font-size: .78rem; font-weight: 700; }
+    .tips { margin: 0 0 18px; padding-left: 1.15rem; font-size: .92rem; }
+    .tips li + li { margin-top: 5px; }
+    .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+    .button {
+      display: inline-block;
+      padding: 8px 11px;
+      border: 1px solid #b9d7e2;
+      border-radius: 9px;
+      color: var(--blue);
+      font-size: .82rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .button:hover { border-color: var(--coral); background: #fff8f5; }
+    .decision-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+    .decision-grid > div { padding: 16px; border-right: 1px solid var(--line); }
+    .decision-grid > div:last-child { border-right: 0; }
+    .decision-grid strong { display: block; color: var(--navy); font-size: .9rem; }
+    .decision-grid span { display: block; margin-top: 5px; color: var(--muted); font-size: .82rem; }
+    .todo { margin: 0; padding: 0; list-style: none; }
+    .todo li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .todo li::before { content: "□"; color: var(--blue); font-size: 1.25rem; line-height: 1.25; }
+    .updated { margin-top: 44px; color: var(--muted); font-size: .8rem; text-align: right; }
+
+    @media (max-width: 860px) {
+      .facts, .decision-grid { grid-template-columns: 1fr 1fr; }
+      .decision-grid > div { border-bottom: 1px solid var(--line); }
+      .recommendation { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 620px) {
+      .page { width: 100%; margin: 0; border: 0; border-radius: 0; }
+      .hero { padding-top: 48px; }
+      .content { padding-bottom: 48px; }
+      .facts, .cards, .decision-grid { grid-template-columns: 1fr; }
+      .decision-grid > div { border-right: 0; }
+    }
+    @media print {
+      body { background: white; }
+      .page { width: 100%; margin: 0; border: 0; border-radius: 0; box-shadow: none; }
+      nav { display: none; }
+      .hero { color: white !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      section, .card, .recommendation, .fact { break-inside: avoid; }
+      a { color: var(--ink); text-decoration: none; }
+      .button { border: 0; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Family trip working plan</p>
+      <h1>2026 여름<br>가족여행 계획서</h1>
+      <p class="hero-copy">하남에서 출발해 부산을 거쳐 여수로 이동하는 가족여행. 부산 2박은 확정되었고, 여수는 회사 회원권을 이용한 소노캄 여수를 우선 예약합니다.</p>
+      <div class="chips" aria-label="여행 핵심 정보">
+        <span class="chip">성인 2 + 만 9세·11세</span>
+        <span class="chip">4박 5일 기본 · 연장 가능</span>
+        <span class="chip">2026. 8. 7. 출발</span>
+        <span class="chip">09:00~10:00 출발</span>
+        <span class="chip">아난티 코브 1박</span>
+        <span class="chip">르컬렉티브 부산역 결제 완료</span>
+        <span class="chip">여수 1순위 소노캄 · 2순위 라마다</span>
+      </div>
+    </header>
+
+    <div class="content">
+      <nav aria-label="문서 바로가기">
+        <a href="#confirmed">확정사항</a>
+        <a href="#enroute">이동 중 점심</a>
+        <a href="#day1">1일차</a>
+        <a href="#pool">수영장</a>
+        <a href="#day2">2일차</a>
+        <a href="#nearby">주변 추천</a>
+        <a href="#nampo">남포·숙소</a>
+        <a href="#yeosu">여수</a>
+        <a href="#choose">선택 가이드</a>
+        <a href="#todo">다음 결정</a>
+      </nav>
+
+      <section id="confirmed">
+        <h2>확정된 내용</h2>
+        <dl class="facts">
+          <div class="fact"><dt>가족 구성</dt><dd>성인 2명<br>만 9세·11세</dd></div>
+          <div class="fact"><dt>전체 일정</dt><dd>4박 5일 기본<br>여수 3박 시 연장</dd></div>
+          <div class="fact"><dt>출발지</dt><dd>경기도 하남</dd></div>
+          <div class="fact"><dt>출발 시간</dt><dd>오전 9~10시</dd></div>
+          <div class="fact"><dt>이동수단</dt><dd>테슬라</dd></div>
+          <div class="fact"><dt>첫 숙박</dt><dd>8월 7일(금)<br>아난티 코브</dd></div>
+          <div class="fact"><dt>숙박 기간</dt><dd>1박</dd></div>
+          <div class="fact"><dt>아난티 조식</dt><dd>미포함</dd></div>
+          <div class="fact"><dt>이동 중 점심</dt><dd>문경휴게소<br>확정</dd></div>
+          <div class="fact"><dt>두 번째 숙소</dt><dd>8월 8일(토)<br>르컬렉티브 부산역</dd></div>
+          <div class="fact"><dt>예약 상태</dt><dd>4인 가족<br>결제 완료</dd></div>
+          <div class="fact"><dt>체크인·아웃</dt><dd>8월 8일 16:00<br>8월 9일 11:00</dd></div>
+          <div class="fact"><dt>여수 1순위</dt><dd>소노캄 여수<br>회사 회원권 예약</dd></div>
+          <div class="fact"><dt>여수 대체안</dt><dd>라마다프라자 여수<br>회원 예약 실패 시</dd></div>
+        </dl>
+        <div class="callout"><strong>가족 취향</strong>　더운 날 야외활동은 선호하지 않음. 8월 8일은 실내 과학관을 중심으로 검토합니다.</div>
+      </section>
+
+      <section id="enroute">
+        <h2>하남에서 부산 가는 길 · 점심</h2>
+        <p class="section-lead">오전 9~10시 출발 시 중부내륙고속도로 충주·괴산·문경 구간에서 점심시간을 맞게 될 가능성이 높습니다.</p>
+        <div class="recommendation">
+          <div class="primary"><h3>확정 · 문경휴게소(창원 방향)</h3><p>출발 약 2시간 30분~3시간 후인 12~13시 도착을 예상합니다. 고속도로를 벗어나지 않아 아이들과 가장 편하고, 식사·화장실·운전자 휴식을 한 번에 해결할 수 있습니다.</p></div>
+          <div class="backup"><h3>식사 목표 시간</h3><p>12:00~13:00<br>30~45분 휴식</p></div>
+        </div>
+
+        <div class="cards" style="margin-top:16px">
+          <article class="card">
+            <span class="rank">확정 · 우회 없음</span>
+            <h3>문경휴게소(창원 방향)</h3>
+            <p>점심시간과 가장 잘 맞는 기본 정차지입니다. 가족이 각자 다른 메뉴를 고르기 쉽고 식사 후 바로 부산 방향으로 이어갈 수 있습니다.</p>
+            <ul class="meta"><li>12~13시 예상</li><li>중부내륙선</li><li>식사+휴식</li></ul>
+            <ul class="tips"><li>후기에서 곤드레 새싹비빔밥·소고기 우거지국밥이 자주 언급됨</li><li>아이들은 돈가스 등 익숙한 메뉴의 당일 판매 여부 확인</li><li>금요일 휴가철에는 주차·주문 대기시간을 여유 있게 계산</li></ul>
+            <div class="links">
+              <a class="button" href="https://www.ex.co.kr/portal/usefee/selectZoneHugae2.do" target="_blank" rel="noopener">도로공사 휴게소 안내</a>
+              <a class="button" href="https://map.naver.com/p/search/%EB%AC%B8%EA%B2%BD%ED%9C%B4%EA%B2%8C%EC%86%8C%20%EC%B0%BD%EC%9B%90%EB%B0%A9%ED%96%A5" target="_blank" rel="noopener">지도·최신 메뉴 후기</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="rank">일찍 배고플 때</span>
+            <h3>괴산휴게소(창원 방향)</h3>
+            <p>9시 출발이거나 아이들이 일찍 배고파하면 문경까지 버티지 않고 먼저 쉬어가는 대안입니다.</p>
+            <ul class="meta"><li>문경보다 약 30분 앞</li><li>중부내륙선</li><li>우회 없음</li></ul>
+            <ul class="tips"><li>간단한 식사와 간식 선택지가 다양한 편</li><li>출발 직전 아침을 적게 먹었다면 이곳을 우선 고려</li><li>문경휴게소까지 약 29km 간격이므로 배고픔에 따라 현장에서 선택</li></ul>
+            <div class="links">
+              <a class="button" href="https://map.naver.com/p/search/%EA%B4%B4%EC%82%B0%ED%9C%B4%EA%B2%8C%EC%86%8C%20%EC%B0%BD%EC%9B%90%EB%B0%A9%ED%96%A5" target="_blank" rel="noopener">지도·최신 메뉴 후기</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="rank">여행식 식사</span>
+            <h3>문경새재 식당가</h3>
+            <p>휴게소 음식보다 지역 음식을 원한다면 문경약돌돼지 석쇠구이·더덕구이 정식 등을 먹는 선택입니다.</p>
+            <ul class="meta"><li>고속도로 이탈</li><li>총 40~60분 추가 예상</li><li>지역 음식</li></ul>
+            <ul class="tips"><li>식사 자체는 만족도가 높지만 부산 도착이 늦어짐</li><li>성수기에는 문경새재 주차장과 식당 대기 가능</li><li>아난티 물놀이 시간을 우선하면 이번에는 생략 권장</li></ul>
+            <div class="links">
+              <a class="button" href="https://map.naver.com/p/search/%EB%AC%B8%EA%B2%BD%EC%83%88%EC%9E%AC%20%EB%A7%9B%EC%A7%91" target="_blank" rel="noopener">식당 지도·최신 후기</a>
+            </div>
+          </article>
+        </div>
+        <div class="callout"><strong>테슬라 충전</strong>　문경휴게소 점심은 확정하되 충전 지점은 차량 모델·출발 배터리 잔량과 당일 테슬라 내비게이션 안내에 따릅니다. 숙소 주변에는 부산 기장 롯데프리미엄아울렛 수퍼차저가 있습니다. <a href="https://www.tesla.com/ko_kr/findus/list/superchargers/South%2520Korea" target="_blank" rel="noopener">테슬라 공식 충전소 목록</a></div>
+      </section>
+
+      <section id="day1">
+        <h2>8월 7일 · 아난티 코브 1일차</h2>
+        <p class="section-lead">금요일 장거리 이동일에는 외부 관광지를 더하지 않고 숙소 경험에 집중하는 편을 추천합니다.</p>
+        <div class="timeline">
+          <div class="step"><time>09:00~10:00</time><h3>하남 출발</h3><p>휴가철 정체와 휴게시간을 고려해 여유 있게 이동합니다.</p></div>
+          <div class="step"><time>12:00~13:00 예상</time><h3>문경휴게소 점심</h3><p>30~45분 동안 식사와 화장실, 운전자 휴식을 함께 해결합니다. 교통상황과 아이들 배고픔에 따라 괴산휴게소로 앞당깁니다.</p></div>
+          <div class="step"><time>도착 직후</time><h3>체크인 또는 짐 보관</h3><p>늦은 점심이나 간단한 간식 후 바로 물놀이를 준비합니다.</p></div>
+          <div class="step"><time>오후 핵심</time><h3>수영장·워터하우스</h3><p>인피니티풀 또는 워터하우스에서 가족 물놀이를 충분히 즐깁니다.</p></div>
+          <div class="step"><time>해질 무렵</time><h3>아난티 타운 산책</h3><p>해안 산책로와 이터널저니를 둘러봅니다.</p></div>
+          <div class="step"><time>저녁</time><h3>숙소 안에서 마무리</h3><p>리조트 내 식사 후 휴식합니다. 시설별 운영시간은 예약 내역과 앱에서 재확인합니다.</p></div>
+        </div>
+        <div class="links" style="margin-top:22px">
+          <a class="button" href="https://ananti.kr/ko/cove/CV0401" target="_blank" rel="noopener">아난티 공식 안내</a>
+          <a class="button" href="https://map.naver.com/p/search/%EC%95%84%EB%82%9C%ED%8B%B0%20%EC%BD%94%EB%B8%8C" target="_blank" rel="noopener">지도·최신 후기</a>
+        </div>
+      </section>
+
+      <section id="pool">
+        <h2>아난티 수영장 이용 메모</h2>
+        <p class="section-lead">2026년 공식 안내 기준입니다. 객실 정원에 성인 2명과 초등학생 2명이 모두 등록되어 있는지 예약 확인서에서 마지막으로 대조합니다.</p>
+        <div class="recommendation">
+          <div class="primary"><h3>투숙객 혜택</h3><p>아난티 코브·아난티 앳 부산 코브 투숙객은 객실 정원 내 인원에 한해 오션 인피니티 풀, 맥퀸즈 풀, 워터하우스를 횟수 제한 없이 무료 이용할 수 있다고 안내되어 있습니다.</p></div>
+          <div class="backup"><h3>이용 가능 시간</h3><p>체크인 당일 13:00부터<br>체크아웃 당일 15:00까지</p></div>
+        </div>
+        <div class="cards" style="margin-top:16px">
+          <article class="card">
+            <span class="rank">도착일 1순위 · 야외</span>
+            <h3>오션 인피니티 풀</h3>
+            <p>2026년 7~8월 09:00~20:30 운영하며 12:00~13:00은 전체 브레이크타임입니다. 메인풀 1.1m, 인피니티풀 0.9m, 키즈풀 0.6m입니다.</p>
+            <ul class="tips"><li>8월 7일 도착 후 16:00~19:00 이용 추천</li><li>만 13세 미만은 보호자 동반</li><li>2층 성인 전용 풀은 만 19세 이상만 이용 가능</li></ul>
+            <div class="links"><a class="button" href="https://ananti.kr/ko/busan/BS0201" target="_blank" rel="noopener">오션 인피니티 풀 공식 안내</a></div>
+          </article>
+          <article class="card">
+            <span class="rank">더위 피하기 1순위 · 실내 중심</span>
+            <h3>워터하우스</h3>
+            <p>천연 온천수를 사용하는 실내·외 휴식형 수영 시설입니다. 7~8월 09:00~21:00 운영하며 수영장은 20:30에 마감합니다.</p>
+            <ul class="tips"><li>8월 8일 09:00~10:30 이용 추천</li><li>실내 성인풀 수심 1m, 유아풀 0.3~0.6m</li><li>입장 전 아난티 앱에서 혼잡 현황 확인</li></ul>
+            <div class="links"><a class="button" href="https://ananti.kr/ko/busan/BS1101" target="_blank" rel="noopener">워터하우스 공식 안내</a></div>
+          </article>
+          <article class="card">
+            <span class="rank">사계절 실내 수영</span>
+            <h3>맥퀸즈 풀</h3>
+            <p>호텔 9층 실내 수영장으로 06:00~22:00 운영하지만 06:00~09:00는 클럽 회원 전용입니다. 정비시간은 13:00~13:30, 17:30~18:00입니다.</p>
+            <ul class="tips"><li>메인풀 수심 1.2m이며 수모 착용 필수</li><li>키즈풀은 만 5세 이하만 이용</li><li>라커는 1만원이므로 객실에서 환복 권장</li></ul>
+            <div class="links"><a class="button" href="https://ananti.kr/ko/busan/BS0401" target="_blank" rel="noopener">맥퀸즈 풀 공식 안내</a></div>
+          </article>
+          <article class="card">
+            <span class="rank">조식 미포함</span>
+            <h3>아침 식사 선택</h3>
+            <p>다모임 조식은 별도 구매 가능하며 공식 가격은 성인 58,000원, 어린이 30,000원입니다. 4인 기준 176,000원입니다.</p>
+            <ul class="tips"><li>운영시간 07:00~10:30</li><li>수영장 시간을 확보하려면 간단한 아침 후 이른 물놀이도 가능</li><li>예약 상품에 별도 쿠폰이 없는지 체크인 시 재확인</li></ul>
+            <div class="links"><a class="button" href="https://ananti.kr/ko/busan/BS0301" target="_blank" rel="noopener">다모임 공식 안내</a></div>
+          </article>
+        </div>
+        <div class="callout"><strong>준비물</strong>　수영복 또는 래시가드, 수모(맥퀸즈 풀), 필요하면 개인 구명조끼를 챙깁니다. 팔튜브와 구명조끼는 가능하지만 일반·대형 튜브, 킥판, 오리발, 물총, 비치볼은 사용할 수 없습니다. 객실 키 또는 키 포켓도 지참합니다.</div>
+      </section>
+
+      <section id="day2">
+        <h2>8월 8일 · 추천 일정 초안</h2>
+        <p class="section-lead">더위를 피하면서 수영장, 과학관, 남포동 야시장을 모두 연결하는 일정입니다.</p>
+        <div class="timeline">
+          <div class="step"><time>08:00 전후</time><h3>간단한 아침</h3><p>조식은 미포함이므로 다모임 별도 이용 또는 간단한 식사를 선택합니다.</p></div>
+          <div class="step"><time>09:00~11:00</time><h3>아난티 수영장</h3><p>오전 비교적 덜 붐비는 시간에 물놀이합니다.</p></div>
+          <div class="step"><time>11:00 전후</time><h3>체크아웃·점심</h3><p>짐을 싣고 오시리아 일대에서 점심을 먹습니다.</p></div>
+          <div class="step"><time>13:00~16:30</time><h3>국립부산과학관</h3><p>상설전시와 어린이과학관을 중심으로 실내에서 관람합니다.</p></div>
+          <div class="step"><time>16:00 이후 · 목표 17:30</time><h3>르컬렉티브 부산역 체크인</h3><p>공식 체크인은 16:00부터입니다. 모바일 안내에 따라 객실과 차량을 등록하고 테슬라는 숙소에 주차합니다. 이후에는 지하철로 이동합니다.</p></div>
+          <div class="step"><time>19:30 이후</time><h3>남포·부평깡통시장</h3><p>부산역에서 지하철 1호선으로 남포 또는 자갈치역까지 이동해 야시장에서 저녁을 먹습니다.</p></div>
+        </div>
+        <div class="callout"><strong>용궁사 판단</strong>　이번 일정에서는 보류를 추천합니다. 꼭 보고 싶다면 오전 8시 이전에 짧게 방문해야 하지만, 수영장 시간이 줄고 야외 계단·더위 부담이 생깁니다.</div>
+      </section>
+
+      <section aria-labelledby="recommended-title">
+        <h2 id="recommended-title">현재 추천하는 기본안</h2>
+        <div class="recommendation">
+          <div class="primary"><h3>8월 8일 · 국립부산과학관</h3><p>더운 야외활동을 피하고 싶은 가족 취향에 가장 잘 맞습니다. 오전 수영 후 13시 전후 입장하는 일정으로 추천합니다.</p></div>
+          <div class="backup"><h3>용궁사는 보류</h3><p>꼭 방문한다면 오전 8시 이전 짧은 일정으로만 검토합니다.</p></div>
+        </div>
+      </section>
+
+      <section id="nearby">
+        <h2>체크아웃 전후 주변 추천</h2>
+        <p class="section-lead">8월 8일은 토요일이므로 인기 시설은 아침 일찍 움직이는 것이 좋습니다.</p>
+        <div class="cards">
+          <article class="card">
+            <span class="rank">1순위 · 활동형</span>
+            <h3>스카이라인 루지 부산</h3>
+            <p>리프트를 타고 올라가 직접 카트를 조작해 내려오는 체험. 초등학생 가족에게 가장 균형 좋은 선택입니다.</p>
+            <ul class="meta"><li>약 1.5~2.5시간</li><li>차량 약 10~20분권</li><li>야외</li></ul>
+            <ul class="tips"><li>토요일·휴가철에는 오픈 시간대 방문 권장</li><li>모자·물·자외선 차단제 준비</li><li>예매 전 아이별 단독·동반 탑승 신장 기준 확인</li></ul>
+            <div class="links">
+              <a class="button" href="https://busan.skylineluge.kr/ko/" target="_blank" rel="noopener">공식 안내</a>
+              <a class="button" href="https://map.naver.com/p/search/%EC%8A%A4%EC%B9%B4%EC%9D%B4%EB%9D%BC%EC%9D%B8%20%EB%A3%A8%EC%A7%80%20%EB%B6%80%EC%82%B0" target="_blank" rel="noopener">지도·최신 후기</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="rank">8월 8일 추천 1순위</span>
+            <h3>국립부산과학관</h3>
+            <p>상설전시와 놀이형 어린이과학관을 묶어 2~4시간 보내기 좋은 실내 체험지입니다.</p>
+            <ul class="meta"><li>09:30~17:30</li><li>발권 마감 16:30</li><li>실내 중심</li></ul>
+            <ul class="tips"><li>상설통합권 공식 기준 성인 4,000원·청소년 3,000원</li><li>체험 프로그램은 사전예약·현장 선착순 여부 확인</li><li>특별전 ‘천재들의 생각 비법’은 8월 30일까지 예정</li></ul>
+            <div class="links">
+              <a class="button" href="https://www.sciport.or.kr/kor/CMS/Contents/Contents.do?mCode=MN002" target="_blank" rel="noopener">관람 안내</a>
+              <a class="button" href="https://www.sciport.or.kr/kor/CMS/EventMgr/view.do?event_code=4218&amp;mCode=MN121&amp;sitecode=kor" target="_blank" rel="noopener">2026 특별전</a>
+              <a class="button" href="https://map.naver.com/p/search/%EA%B5%AD%EB%A6%BD%EB%B6%80%EC%82%B0%EA%B3%BC%ED%95%99%EA%B4%80" target="_blank" rel="noopener">지도·최신 후기</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="rank">이번 일정은 보류</span>
+            <h3>해동용궁사</h3>
+            <p>부산다운 바다 풍경을 짧은 시간에 보기 좋습니다. 체험형 장소보다는 산책과 사진 중심입니다.</p>
+            <ul class="meta"><li>약 60~90분</li><li>입장 무료</li><li>주차 유료</li></ul>
+            <ul class="tips"><li>주차장 진입과 계단이 붐비므로 이른 아침 추천</li><li>계단·돌길이 많아 운동화 착용</li><li>물놀이 다음 일정이라면 아이들 피로도 고려</li></ul>
+            <div class="links">
+              <a class="button" href="https://www.visitbusan.net/kr/index.do?lang_cd=ko&amp;menuCd=DOM_000000203012001000&amp;uc_seq=261" target="_blank" rel="noopener">부산관광 소개</a>
+              <a class="button" href="https://map.naver.com/p/search/%ED%95%B4%EB%8F%99%EC%9A%A9%EA%B6%81%EC%82%AC" target="_blank" rel="noopener">지도·최신 후기</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="rank">하루 전용</span>
+            <h3>롯데월드 어드벤처 부산</h3>
+            <p>놀이공원을 좋아한다면 확실한 선택이지만, 반나절 이상 필요하고 8월 토요일의 혼잡과 더위 부담이 큽니다.</p>
+            <ul class="meta"><li>최소 4~6시간</li><li>실외 비중 높음</li><li>앱 확인 권장</li></ul>
+            <ul class="tips"><li>체크아웃 후 하루를 전용하는 편이 효율적</li><li>공식 앱에서 대기시간·공연·운휴 정보 확인</li><li>폭염 또는 비 예보에 따라 일정 재검토</li></ul>
+            <div class="links">
+              <a class="button" href="https://adventurebusan.lotteworld.com/kor/main/index.do" target="_blank" rel="noopener">공식 홈페이지</a>
+              <a class="button" href="https://play.google.com/store/apps/details?id=com.lotteworld.android.adventurebusan&amp;hl=ko" target="_blank" rel="noopener">공식 앱</a>
+              <a class="button" href="https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%EC%9B%94%EB%93%9C%20%EC%96%B4%EB%93%9C%EB%B2%A4%EC%B2%98%20%EB%B6%80%EC%82%B0" target="_blank" rel="noopener">지도·최신 후기</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="nampo">
+        <h2>두 번째 숙소 · 르컬렉티브 부산역</h2>
+        <p class="section-lead">8월 8일 토요일, 성인 2명과 초등학생 2명의 숙박으로 결제를 완료했습니다. 아스티호텔보다 약 10만원 높지만 넓은 공간과 분리된 침실, 레지던스 편의시설을 선택했습니다.</p>
+        <div class="recommendation">
+          <div class="primary"><h3>예약 확정 · 부산역</h3><p>테슬라를 숙소에 세워두고 지하철 1호선 다대포해수욕장 방면을 이용합니다. 부산역에서 자갈치역까지 3정거장, 열차 약 7~8분이며 숙소 출발부터 시장 도착까지 편도 약 20분을 예상합니다.</p></div>
+          <div class="backup"><h3>야시장 시간</h3><p>공식 안내 기준<br>19:30~24:00</p></div>
+        </div>
+        <div class="cards" style="margin-top:16px">
+          <article class="card">
+            <span class="rank">결제 완료</span>
+            <h3>4인 가족 숙박</h3>
+            <p>거실과 침실이 분리된 레지던스형 숙소입니다. 실제 후기에서는 객실 크기와 청결, 가족 단위 편의성이 강점으로 반복해서 언급됩니다.</p>
+            <ul class="meta"><li>8월 8일(토)~9일(일)</li><li>체크인 16:00</li><li>체크아웃 11:00</li></ul>
+            <ul class="tips"><li>주소: 부산광역시 동구 충장대로 160, 48751</li><li>예약한 객실의 정확한 침대 구성과 4인 등록 확인</li><li>주방·세탁기와 건조기 이용 가능 여부를 객실 안내에서 확인</li></ul>
+            <div class="links"><a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=Le%20collective%20Busan%20station%2C%20160%2C%20Chungjang-daero%2C%20Dong-gu%2C%20Busan%2C%20Busan%2C%20South%20Korea%2C%2048751" target="_blank" rel="noopener">주소·길찾기</a><a class="button" href="https://www.booking.com/hotel/kr/le-collective-busan-station.ko.html" target="_blank" rel="noopener">시설·투숙 후기</a><a class="button" href="https://map.naver.com/p/search/%EB%A5%B4%EC%BB%AC%EB%A0%89%ED%8B%B0%EB%B8%8C%20%EB%B6%80%EC%82%B0%EC%97%AD" target="_blank" rel="noopener">네이버지도·최신 후기</a></div>
+          </article>
+          <article class="card">
+            <span class="rank">체크인 전 필수</span>
+            <h3>비대면 출입 준비</h3>
+            <p>별도 프런트 없이 예약 메시지나 이메일로 객실 번호와 출입 정보를 받는 방식입니다. 공동현관과 엘리베이터 이용이 처음에는 복잡했다는 후기가 있습니다.</p>
+            <ul class="tips"><li>체크인 당일 문자·이메일·스팸함 확인</li><li>휴대전화 충전 상태와 출입 QR 또는 비밀번호 캡처</li><li>차량번호를 미리 등록하고 주차장 진입 동선 확인</li></ul>
+          </article>
+          <article class="card">
+            <span class="rank">테슬라·세탁 메모</span>
+            <h3>주차와 객실 편의시설</h3>
+            <p>숙소 안내에는 무료 전용 주차와 전기차 충전 시설이 표시되어 있습니다. 세탁기·건조기를 언급한 실제 후기도 있어 물놀이 옷을 정리하기 좋습니다.</p>
+            <ul class="tips"><li>충전기는 공용이므로 도착 직후 위치와 사용 가능 상태 확인</li><li>세제 비치 여부와 건조기 형태는 객실 안내에서 확인</li><li>수영복과 하루치 옷 위주로 소량 세탁 권장</li></ul>
+          </article>
+          <article class="card">
+            <span class="rank">저녁 이동</span>
+            <h3>부평깡통시장 왕복</h3>
+            <p>르컬렉티브에서 부산역 지하철역으로 이동한 뒤 1호선 자갈치역에서 내립니다. 자갈치역 3번 출구에서 시장까지 도보 약 9~10분입니다.</p>
+            <ul class="tips"><li>환승 없이 3정거장</li><li>열차 이동 약 7~8분</li><li>아이들과 숙소 출발부터 편도 약 20분 예상</li></ul>
+          </article>
+        </div>
+        <div class="links" style="margin-top:18px"><a class="button" href="https://www.bsjunggu.go.kr/eng/index.junggu?menuCd=DOM_000001202002003000" target="_blank" rel="noopener">깡통시장 공식 안내</a><a class="button" href="https://www2.humetro.busan.kr/default/main.do" target="_blank" rel="noopener">부산도시철도 공식</a><a class="button" href="https://map.naver.com/p/search/%EB%B6%80%ED%8F%89%EA%B9%A1%ED%86%B5%EC%8B%9C%EC%9E%A5" target="_blank" rel="noopener">시장 지도·후기</a></div>
+      </section>
+
+      <section id="yeosu">
+        <h2>3일차 이후 · 여수 숙박 계획</h2>
+        <p class="section-lead">8월 9일 르컬렉티브 체크아웃 후 자가용으로 여수로 이동합니다. 회사 소노캄 회원권 예약을 먼저 시도하고, 회원 객실이 열리지 않거나 마감되면 라마다프라자 여수로 전환합니다.</p>
+
+        <div class="recommendation">
+          <div class="primary"><h3>1순위 · 소노캄 여수</h3><p>회사 회원권을 이용해 회원가와 객실 재고를 우선 확인합니다. 오동도 바로 앞 입지, 안정적인 객실 관리와 서비스, 조식·사우나가 강점입니다. 4인 투숙 가능 객실과 침구 구성을 회원 예약 화면에서 최종 확인합니다.</p></div>
+          <div class="backup"><h3>2순위 · 라마다프라자 여수</h3><p>소노캄 회원 예약이 불가능할 때 바로 전환합니다. 돌산권 숙소이며 수영장과 부대시설, 상대적으로 낮은 숙박비가 장점입니다.</p></div>
+        </div>
+
+        <div class="cards" style="margin-top:16px">
+          <article class="card">
+            <span class="rank">회원권 우선 예약</span>
+            <h3>소노캄 여수 선택 이유</h3>
+            <p>유탑 마리나보다 호텔 서비스와 객실 관리, 조식 만족도가 안정적이며 오동도·아쿠아플라넷·엑스포공원을 도보권으로 묶기 좋습니다. 더운 날 장거리 야외 이동을 줄이려는 가족 취향에도 잘 맞습니다.</p>
+            <ul class="meta"><li>오동도 앞</li><li>오션뷰</li><li>사우나</li><li>조식·다이닝</li></ul>
+            <ul class="tips"><li>소노캄 여수에는 가족 물놀이용 수영장이 없음</li><li>파밀리에 스위트 트윈은 싱글침대 2개와 바닥 침구 2채 구성</li><li>회원 예약에서는 4인 정원과 객실 유형을 반드시 확인</li><li>회원가·취소 규정은 회사 회원권 예약 화면을 기준으로 기록</li></ul>
+            <div class="links"><a class="button" href="https://www.sonohotelsresorts.com/calm_ys/hotel" target="_blank" rel="noopener">공식 객실 안내</a><a class="button" href="https://map.naver.com/p/search/%EC%86%8C%EB%85%B8%EC%BA%84%20%EC%97%AC%EC%88%98" target="_blank" rel="noopener">지도·최신 후기</a><a class="button" href="https://nol.yanolja.com/stay/domestic/3000925" target="_blank" rel="noopener">일반 예약가 참고</a></div>
+          </article>
+
+          <article class="card">
+            <span class="rank">숙박 기간 선택 가능</span>
+            <h3>2박 기본 · 3박 연장안</h3>
+            <p>현재 기본안은 8월 9일 체크인 후 8월 11일 체크아웃하는 여수 2박입니다. 회원권 재고와 귀가 계획이 맞으면 8월 12일까지 3박으로 연장할 수 있습니다.</p>
+            <ul class="tips"><li>2박: 8월 9일(일)~11일(화), 이후 하남 귀가</li><li>3박: 8월 9일(일)~12일(수), 전체 여행 일정 연장</li><li>대안: 여수 2박 후 귀가 중간 지역에서 1박</li><li>회원 예약 가능일을 먼저 확인한 뒤 전체 일정 확정</li></ul>
+          </article>
+
+          <article class="card">
+            <span class="rank">여수 체류 동선</span>
+            <h3>더위를 피하는 가족 일정</h3>
+            <p>숙소 주변의 실내·짧은 이동 관광지를 중심으로 구성하고, 밤바다는 해가 진 뒤에 즐깁니다.</p>
+            <ul class="tips"><li>8월 9일: 부산 출발 → 여수 이동 → 체크인 → 오동도 입구·엑스포 해안 산책</li><li>8월 10일: 아쿠아플라넷 또는 엑스포권 실내 관광</li><li>저녁: 하멜등대·낭만포차는 택시 이동 검토</li><li>돌산 케이블카는 더위가 약해지는 해질 무렵 선택</li></ul>
+            <div class="links"><a class="button" href="https://www.aquaplanet.co.kr/yeosu/index.do" target="_blank" rel="noopener">아쿠아플라넷 여수</a><a class="button" href="https://www.yeosu.go.kr/tour" target="_blank" rel="noopener">여수 관광 공식 안내</a></div>
+          </article>
+
+          <article class="card">
+            <span class="rank">예약 실패 시 즉시 전환</span>
+            <h3>라마다프라자 여수 대체안</h3>
+            <p>소노캄 회원 객실이 마감되면 돌산권 라마다를 예약합니다. 비용을 줄이면 온돌 객실, 네 명의 침대 구성을 우선하면 더블침대 2개의 글램핑 스위트를 확인합니다.</p>
+            <ul class="meta"><li>돌산권</li><li>수영장</li><li>오션뷰 객실</li><li>무료취소 상품 우선</li></ul>
+            <ul class="tips"><li>온돌 객실은 기준 3인·침구 3채로 4인 가족에게 다소 불편할 수 있음</li><li>글램핑 스위트는 기준 4인·더블침대 2개</li><li>소노캄 예약 결과 확인 전 라마다 무료취소 상품을 선점하는 방법도 검토</li><li>전환 시 수영장 포함 상품과 별도 구매 총액을 다시 비교</li></ul>
+            <div class="links"><a class="button" href="https://www.ramadaplazadolsanyeosu.com/" target="_blank" rel="noopener">라마다 공식 안내</a><a class="button" href="https://nol.yanolja.com/stay/domestic/1000110061" target="_blank" rel="noopener">객실·가격 확인</a><a class="button" href="https://map.naver.com/p/search/%EB%9D%BC%EB%A7%88%EB%8B%A4%ED%94%84%EB%9D%BC%EC%9E%90%20%EC%97%AC%EC%88%98" target="_blank" rel="noopener">지도·최신 후기</a></div>
+          </article>
+        </div>
+
+        <div class="callout"><strong>예약 실행 순서</strong>　① 회사 회원권으로 소노캄 여수 8월 9일 체크인 객실 조회 → ② 4인 정원·회원가·2박/3박 재고·취소 규정 확인 → ③ 가능하면 소노캄 예약 → ④ 불가능하면 라마다 무료취소 가능 상품으로 전환합니다.</div>
+      </section>
+
+      <section id="choose">
+        <h2>가족 취향별 빠른 선택</h2>
+        <div class="decision-grid">
+          <div><strong>활동적·놀이 선호</strong><span>스카이라인 루지</span></div>
+          <div><strong>비 예보·폭염</strong><span>국립부산과학관</span></div>
+          <div><strong>부산 풍경·사진</strong><span>해동용궁사</span></div>
+          <div><strong>놀이공원 최우선</strong><span>롯데월드 부산</span></div>
+          <div><strong>호캉스 최우선</strong><span>외부 관광 생략</span></div>
+        </div>
+      </section>
+
+      <section id="todo">
+        <h2>다음 결정이 필요한 항목</h2>
+        <ul class="todo">
+          <li>테슬라 모델과 하남 출발 시 예상 배터리 잔량</li>
+          <li>8월 8일: 과학관 추천안 최종 승인 또는 용궁사 선택</li>
+          <li>아난티 예약 확인서의 정확한 시설명·객실 유형·등록 정원</li>
+          <li>아난티 조식: 다모임 별도 이용 또는 간단한 아침 선택</li>
+          <li>르컬렉티브 부산역의 정확한 객실명·침대 구성과 4인 등록 확인</li>
+          <li>르컬렉티브 차량번호 등록·전기차 충전기·세탁건조기 형태 확인</li>
+          <li>회사 회원권으로 소노캄 여수 8월 9일 체크인 가능 여부 확인</li>
+          <li>소노캄 회원가·4인 객실 유형·2박 또는 3박 재고·취소 규정 확인</li>
+          <li>소노캄 예약 불가 시 라마다 온돌 또는 글램핑 스위트 중 선택</li>
+        </ul>
+      </section>
+
+      <p class="updated">마지막 업데이트: 2026년 7월 26일 · 여수 숙소 1순위 소노캄(회사 회원권), 2순위 라마다로 정리 · 운영시간과 요금은 방문 전날 공식 홈페이지에서 재확인</p>
+    </div>
+  </main>
+</body>
+</html>
